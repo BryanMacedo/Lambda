@@ -60,6 +60,20 @@ public class Lambda {
 
         List<String> palavrasFiltradasFL = palavras.stream().filter(palavra -> palavra.length() > 5).toList();
         System.out.println("Palavras com mais de 5 letras com função lambda: " + palavrasFiltradasFL);
+
+        // Filtros com obj
+
+        List<Pessoa> pessoas = Arrays.asList(
+                new Pessoa("Alice", 25),
+                new Pessoa("Bob", 30),
+                new Pessoa("Charlie", 22)
+        );
+
+        List<String> nomes = pessoas.stream().map(pessoa -> pessoa.getNome()).toList();
+        List<Integer> idade = pessoas.stream().map(Pessoa::getIdade).toList();
+
+        System.out.println("Lista de nomes: " + nomes + " e Lista de idades: " + idade);
+
     }
 }
 
